@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Blog</title>
+  <title>文章 - Blog</title>
   <meta name="description" content="你是我的眼">
   <meta name="keywords" content="博客">
   <meta name="author" content="小麦">
   <meta name="theme-color" content="#000000">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Blog">
+  <meta property="og:title" content="文章">
   <meta property="og:description" content="你是我的眼">
-  <meta property="og:url" content="/index.html">
+  <meta property="og:url" content="/posts/index.html">
   <meta property="og:site_name" content="Blog">
 
   <link rel="icon" href="/images/favicon.png">
@@ -54,7 +54,7 @@
 <link rel="apple-touch-icon" href="/images/favicon.svg">
 
 <meta name="generator" content="Hexo 7.3.0"></head>
-<body class="macos-body is-home">
+<body class="macos-body ">
   <!-- 苹果开机动画 -->
   
   <div class="boot-screen" id="bootScreen">
@@ -322,17 +322,92 @@
     
 
     <!-- 主内容窗口 -->
-    <div class="window-container home-container" id="windowContainer">
-      
-  <!-- 干净桌面模式 - 时钟和欢迎语 -->
-  <div class="desktop-welcome">
-    <div class="welcome-clock" id="welcomeClock">
-      <div class="clock-time" id="welcomeTime">00:00</div>
-      <div class="clock-date" id="welcomeDate">1月1日 周一</div>
+    <div class="window-container " id="windowContainer">
+      <article class="macos-window posts-window active">
+  <div class="window-titlebar">
+    <div class="traffic-lights">
+      <span class="traffic-light close" data-action="close"></span>
+      <span class="traffic-light minimize" data-action="minimize"></span>
+      <span class="traffic-light maximize" data-action="maximize"></span>
     </div>
-    <div class="welcome-greeting" id="welcomeGreeting">欢迎回来~</div>
+    <div class="window-title">
+      <i class="fas fa-file-lines"></i>
+      <span>文章</span>
+      <span class="posts-count-badge">1</span>
+    </div>
+    <div class="window-controls-right">
+      <div class="posts-search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="postsSearchInput" placeholder="搜索文章标题、标签..." autocomplete="off">
+        <span class="posts-search-clear" id="postsSearchClear" style="display:none;"><i class="fas fa-times"></i></span>
+      </div>
+    </div>
   </div>
 
+  <!-- 分栏标签 -->
+  <div class="posts-tabs-bar">
+    <div class="posts-tabs" id="postsTabs">
+      <div class="posts-tab active" data-tab="all" data-type="all">
+        <i class="fas fa-layer-group"></i> 全部
+      </div>
+      
+      
+      <div class="posts-tab" data-tab="__archive__" data-type="group">
+        <i class="fas fa-calendar"></i> 时间
+      </div>
+    </div>
+    <!-- 子分类标签（动态显示） -->
+    <div class="posts-subtabs" id="postsSubtabs" style="display:none;"></div>
+  </div>
+
+  <!-- 排序栏 -->
+  <div class="posts-toolbar">
+    <span class="posts-toolbar-label">排序：</span>
+    <div class="posts-sort">
+      <button class="sort-btn active" data-sort="date-desc"><i class="fas fa-arrow-down"></i> 最新</button>
+      <button class="sort-btn" data-sort="date-asc"><i class="fas fa-arrow-up"></i> 最早</button>
+      <button class="sort-btn" data-sort="title"><i class="fas fa-font"></i> 标题</button>
+    </div>
+    <span class="posts-result-info" id="postsResultInfo">共 1 篇文章</span>
+  </div>
+
+  <!-- 文章列表 -->
+  <div class="posts-list-container">
+    <div class="posts-list" id="postsList">
+      
+        
+        <div class="post-list-item"
+             data-category=""
+             data-tags=""
+             data-title="Hello World"
+             data-date="2026-08-12"
+             data-year="2026"
+             data-month="08"
+             style="animation-delay: 0s">
+          
+          <div class="post-list-cover post-list-cover-placeholder">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          
+          <div class="post-list-info">
+            <h3 class="post-list-title"><a href="/posts/1.html">Hello World</a></h3>
+            <div class="post-list-meta">
+              <span><i class="far fa-calendar"></i> 2026-08-12</span>
+              
+              
+            </div>
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="posts-empty" id="postsEmpty" style="display:none;">
+      <i class="fas fa-search"></i>
+      <p>没有找到匹配的文章</p>
+      <button class="posts-reset-btn" id="postsResetBtn">重置筛选</button>
+    </div>
+  </div>
+</article>
 
     </div>
 
@@ -345,13 +420,13 @@
       
         
           
-          <div class="dock-item " data-link="/posts/">
+          <div class="dock-item active" data-link="/posts/">
             <div class="dock-icon">
               
               <i class="fas fa-file-alt"></i>
             </div>
             <span class="dock-tooltip">文章</span>
-            
+            <span class="dock-indicator"></span>
           </div>
         
           

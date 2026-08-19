@@ -1,0 +1,100 @@
+/* ============================================================
+   macOS Desktop Theme - Status Bar
+   ============================================================ */
+
+.macos-statusbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--macos-statusbar-height);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  user-select: none;
+}
+
+.statusbar-left,
+.statusbar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.statusbar-item {
+  padding: 3px 10px;
+  border-radius: 5px;
+  cursor: default;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.statusbar-item:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.statusbar-item.apple-logo {
+  font-size: 15px;
+  padding: 3px 10px;
+}
+
+.statusbar-item.app-name {
+  font-weight: 600;
+}
+
+.statusbar-icon {
+  padding: 3px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.statusbar-icon i {
+  font-size: 13px;
+}
+
+.statusbar-icon span {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.battery {
+  gap: 4px;
+}
+
+.battery-text {
+  font-size: 12px;
+}
+
+.statusbar-date,
+.statusbar-time {
+  font-size: 12px;
+  padding: 3px 8px;
+}
+
+.statusbar-date {
+  gap: 6px;
+}
+
+/* 深色模式适配（当壁纸较暗时） */
+@media (prefers-color-scheme: dark) {
+  .macos-statusbar {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .statusbar-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}

@@ -1,0 +1,646 @@
+/* ============================================================
+   macOS Desktop Theme - About Page (Proper Layout)
+   ============================================================ */
+.about-window { max-width: 860px; margin: 0 auto; }
+.about-window .window-content {
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 24px;
+}
+.about-content { padding: 0; }
+
+/* 通用区块 */
+.ab-block {
+  margin-bottom: 36px;
+}
+.ab-label {
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.ab-label.light { color: rgba(255,255,255,0.7); }
+.ab-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 1. 顶部英雄区 */
+.ab-hero {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  padding: 36px;
+  background: linear-gradient(135deg, rgba(102,126,234,0.06), rgba(118,75,162,0.06));
+  border-radius: 16px;
+  margin-bottom: 36px;
+}
+.ab-hero-left {
+  flex-shrink: 0;
+  text-align: center;
+  width: 120px;
+}
+.ab-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+.ab-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ab-avatar .avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 36px;
+}
+.ab-subtitle {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #667eea;
+  font-weight: 500;
+}
+.ab-hero-right {
+  flex: 1;
+  min-width: 0;
+}
+.ab-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #1d1d1f;
+}
+.ab-desc {
+  font-size: 14px;
+  color: #6e6e73;
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+.ab-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ab-skill {
+  font-size: 12px;
+  color: #555;
+  padding: 4px 12px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* 2. 站点关于 */
+.ab-site {
+  text-align: center;
+  padding: 32px 20px;
+}
+.ab-site-title {
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+.ab-site-small {
+  display: block;
+  font-size: 18px;
+  color: #bbb;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.ab-site-main {
+  display: block;
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ab-words {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.ab-word {
+  padding: 6px 18px;
+  background: rgba(102,126,234,0.08);
+  color: #667eea;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  animation: abFadeUp 0.5s ease both;
+}
+@keyframes abFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. Hello */
+.ab-hello {
+  text-align: center;
+  padding: 16px;
+}
+.ab-hello-text {
+  font-size: 42px;
+  font-weight: 800;
+  font-style: italic;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 4. 技能 */
+.ab-skills-section { text-align: center; }
+
+/* 5. 生涯时间线 */
+.ab-careers { text-align: center; }
+.ab-timeline {
+  max-width: 420px;
+  margin: 0 auto 24px;
+  text-align: left;
+}
+.ab-timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  animation: abFadeLeft 0.5s ease both;
+}
+@keyframes abFadeLeft {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.ab-timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(102,126,234,0.15);
+}
+.ab-timeline-content {
+  font-size: 14px;
+  color: #444;
+}
+.ab-img {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+.ab-img img {
+  width: 100%;
+  display: block;
+}
+
+/* 6. 统计按钮 */
+.ab-stat { text-align: center; }
+.ab-stat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 36px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 16px rgba(102,126,234,0.3);
+}
+.ab-stat-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102,126,234,0.4);
+}
+
+/* 7. 地图 */
+.ab-map { border-radius: 14px; overflow: hidden; }
+.ab-map-bg {
+  min-height: 180px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.ab-map-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+}
+.ab-map-inner {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+.ab-map-label {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+.ab-map-place {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* 8. 个人信息三栏 */
+.ab-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.ab-info-card {
+  text-align: center;
+  padding: 22px 16px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.ab-info-label {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 8px;
+}
+.ab-info-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 9. 性格卡片 */
+.ab-personality-card {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa, #e8ecf4);
+  border-radius: 14px;
+  padding: 28px;
+}
+.ab-personality-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ab-personality-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ab-personality-body { flex: 1; }
+.ab-personality-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+.ab-personality-type {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 4px 0 10px;
+}
+.ab-personality-badge {
+  max-width: 160px;
+  margin-bottom: 10px;
+}
+.ab-personality-link {
+  font-size: 12px;
+  color: #667eea;
+  text-decoration: none;
+}
+.ab-personality-link:hover { text-decoration: underline; }
+
+/* 10. 两列布局 */
+.ab-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+.ab-two-col .ab-block { margin-bottom: 0; }
+
+/* 座右铭 */
+.ab-quote, .ab-buff {
+  background: rgba(255,255,255,0.5);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+.ab-quote-text, .ab-buff-text {
+  line-height: 1.5;
+}
+.ab-quote-top, .ab-buff-top {
+  display: block;
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 4px;
+}
+.ab-quote-bottom {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ab-buff-bottom {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ec4899;
+}
+
+/* 11. 游戏封面 */
+.ab-game { border-radius: 14px; overflow: hidden; }
+.ab-cover-bg {
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.ab-cover-bg.small { min-height: 160px; }
+.ab-cover-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
+}
+.ab-cover-inner {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+.ab-cover-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 6px 0;
+}
+.ab-cover-title-sm {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 6px 0;
+}
+.ab-cover-sub {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* 12. 追番网格 */
+.ab-comic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 14px;
+}
+.ab-comic-card {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  animation: abFadeUp 0.5s ease both;
+}
+.ab-comic-cover {
+  aspect-ratio: 3/4;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  background: #f0f0f0;
+}
+.ab-comic-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ab-comic-name {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 音乐按钮 */
+.ab-music-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 16px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+.ab-music-btn:hover { background: rgba(255,255,255,0.3); }
+
+/* 无 about.yml 时 */
+.ab-body { padding: 0 8px 20px; }
+.ab-hint {
+  text-align: center;
+  padding: 24px;
+  color: #999;
+  background: rgba(255,255,255,0.4);
+  border-radius: 10px;
+  font-size: 13px;
+}
+.ab-hint code {
+  background: #f5f5f7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .ab-hero { flex-direction: column; text-align: center; }
+  .ab-skills { justify-content: center; }
+  .ab-info-grid { grid-template-columns: 1fr; }
+  .ab-personality-card { flex-direction: column; text-align: center; }
+  .ab-two-col { grid-template-columns: 1fr; }
+  .ab-hello-text { font-size: 32px; }
+  .ab-site-main { font-size: 28px; }
+}
+
+/* 打赏列表 */
+.ab-reward-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ab-reward-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.5);
+  animation: abFadeUp 0.4s ease both;
+}
+.ab-reward-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.ab-reward-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ab-reward-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+.ab-reward-time {
+  font-size: 12px;
+  color: #999;
+}
+.ab-reward-amount {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+/* 可爱打赏区域 */
+.ab-reward-cute {
+  text-align: center;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, #fff5f7 0%, #f0f4ff 100%);
+  border-radius: 20px;
+  margin-bottom: 36px;
+  border: 2px dashed #ffb6c1;
+  position: relative;
+  overflow: hidden;
+}
+.ab-reward-cute::before {
+  content: '✨';
+  position: absolute;
+  top: 10px; left: 20px;
+  font-size: 20px;
+  animation: abFloat 3s ease-in-out infinite;
+}
+.ab-reward-cute::after {
+  content: '⭐';
+  position: absolute;
+  top: 15px; right: 20px;
+  font-size: 18px;
+  animation: abFloat 3s ease-in-out infinite 1s;
+}
+@keyframes abFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(10deg); }
+}
+.ab-reward-cute-icon {
+  font-size: 48px;
+  margin-bottom: 8px;
+  animation: abBounce 2s ease-in-out infinite;
+}
+@keyframes abBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.ab-reward-cute-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ff6b9d;
+  margin: 0 0 6px 0;
+}
+.ab-reward-cute-subtitle {
+  font-size: 13px;
+  color: #999;
+  margin: 0 0 24px 0;
+}
+.ab-reward-cute-codes {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.ab-reward-cute-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  width: 160px;
+}
+.ab-reward-cute-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+.ab-reward-cute-card.wechat { border: 2px solid #07c160; }
+.ab-reward-cute-card.alipay { border: 2px solid #1677ff; }
+.ab-reward-cute-img {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.ab-reward-cute-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ab-reward-cute-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.ab-reward-cute-card.wechat .ab-reward-cute-name { color: #07c160; }
+.ab-reward-cute-card.alipay .ab-reward-cute-name { color: #1677ff; }
+.ab-reward-cute-footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.ab-reward-cute-heart {
+  display: inline-block;
+  animation: abHeartBeat 1.2s ease-in-out infinite;
+}
+@keyframes abHeartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}

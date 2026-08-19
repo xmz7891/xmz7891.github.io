@@ -1,0 +1,369 @@
+/* ============================================================
+   macOS Desktop Theme - Homepage Widgets
+   ============================================================ */
+
+.home-widgets-panel {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 320px;
+  max-height: calc(100vh - var(--macos-statusbar-height) - var(--macos-dock-height) - 60px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 5;
+  padding-right: 4px;
+}
+
+.home-widgets-panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.home-widgets-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+/* 小组件通用样式 */
+.home-widget {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s var(--macos-transition), box-shadow 0.3s;
+}
+
+.home-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 入场动画 */
+.widget-enter {
+  animation: widgetSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes widgetSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 作者卡片 */
+.profile-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0.9;
+}
+
+.profile-card-content {
+  position: relative;
+  padding: 24px 20px 20px;
+  text-align: center;
+}
+
+.profile-avatar-large {
+  width: 72px;
+  height: 72px;
+  margin: 20px auto 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+}
+
+.profile-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-fallback-large {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 28px;
+}
+
+.profile-name-large {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #1d1d1f;
+}
+
+.profile-signature {
+  font-size: 13px;
+  color: #86868b;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  margin-bottom: 14px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1f;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #86868b;
+  margin-top: 2px;
+}
+
+.profile-social-large {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+  font-size: 16px;
+  transition: all 0.25s var(--macos-transition);
+}
+
+.social-btn:hover {
+  background: var(--macos-blue);
+  color: #fff;
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* 小组件头部 */
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1f;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.widget-header i {
+  color: var(--macos-blue);
+}
+
+.hot-badge {
+  margin-left: auto;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  animation: hotPulse 2s ease-in-out infinite;
+}
+
+@keyframes hotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* 热搜列表 */
+.hot-search-list {
+  padding: 8px 12px 12px;
+}
+
+.hot-search-loading {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+  font-size: 13px;
+}
+
+.hot-search-loading i {
+  margin-right: 6px;
+}
+
+.hot-search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.hot-search-item:hover {
+  background: rgba(0, 122, 255, 0.08);
+}
+
+.hot-rank {
+  width: 20px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.hot-rank.top1 { color: #ff4d4f; }
+.hot-rank.top2 { color: #ff7a45; }
+.hot-rank.top3 { color: #ffa940; }
+
+.hot-title {
+  flex: 1;
+  font-size: 13px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hot-heat {
+  font-size: 11px;
+  color: #999;
+  flex-shrink: 0;
+}
+
+/* 最近文章 */
+.recent-posts-list {
+  padding: 8px 12px 12px;
+}
+
+.recent-post-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.15s;
+  color: #333;
+}
+
+.recent-post-item:hover {
+  background: rgba(0, 122, 255, 0.08);
+}
+
+.recent-index {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.recent-index.top {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
+.recent-title {
+  flex: 1;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 分类标签 */
+.categories-list,
+.tag-cloud-list {
+  padding: 12px 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(0, 122, 255, 0.08);
+  border-radius: 14px;
+  font-size: 12px;
+  color: var(--macos-blue);
+  transition: all 0.2s;
+}
+
+.category-chip:hover {
+  background: var(--macos-blue);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.chip-count {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 10px;
+}
+
+.category-chip:hover .chip-count {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tag-chip {
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.tag-chip:hover {
+  background: var(--macos-blue);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* 首页时窗口容器隐藏（小组件模式） */
+.is-home .window-container {
+  display: none;
+}
